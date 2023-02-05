@@ -4,16 +4,25 @@
 Create Role, Database and Table
 
 ```
-psql -U postgres
+brew install postgresql
+brew services run postgresql
+```
 
+```
+psql postgres
+```
+
+
+```
 CREATE ROLE todo WITH LOGIN PASSWORD 'todo';
 
 
 CREATE DATABASE todo with OWNER todo;
 
 \c todo todo
+```
 
-
+```
 CREATE TABLE IF NOT EXISTS todo (
     id        SERIAL PRIMARY KEY,
     title     VARCHAR(255),
